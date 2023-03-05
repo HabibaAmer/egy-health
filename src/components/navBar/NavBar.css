@@ -1,16 +1,31 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
 }
 
-.logo h2 {
-    font-weight: bold;
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo svg {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+.logo .logo__text {
+  font-size: 21px;
+  font-weight: bold;
+  color: var(--secondary);
 }
 
 .menu {
-    flex: 1;
-    justify-content: flex-end;
-    border: 0
+  flex: 1;
+  justify-content: flex-end;
+  border: 0;
 }

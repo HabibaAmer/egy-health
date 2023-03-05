@@ -3,6 +3,8 @@ import React from "react";
 import { Menu } from "antd";
 import { Header } from "antd/es/layout/layout";
 
+import { ReactComponent as Logo } from "../../styles/images/Logo.svg";
+
 import "./NavBar.css";
 
 const items1 = ["Home", "Buy a card", "Login", "Signup"].map((key) => ({
@@ -14,7 +16,8 @@ const navBar = () => {
   return (
     <Header className="header">
       <div className="logo">
-        <h2>EgyHealth</h2>
+        <Logo />
+        <span className="logo__text">EgyHealth</span>
       </div>
       <Menu
         className="menu"
