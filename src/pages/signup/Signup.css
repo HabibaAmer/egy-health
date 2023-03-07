@@ -1,0 +1,26 @@
+.signup-container {
+  display: flex;
+  flex: 1;
+}
+
+.signup-container > div {
+  width: 50%;
+}
+
+.signup__image {
+  background-size: cover;
+  background-position: center;
+}
+
+.form {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form__title {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+}

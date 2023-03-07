@@ -13,16 +13,19 @@ const dummyText =
 
 const content = [
   {
+    id: 1,
     title: "Secure your data",
     text: dummyText,
     icon: <SecurityScanOutlined />,
   },
   {
+    id: 2,
     title: "Save your time",
     text: dummyText,
     icon: <FieldTimeOutlined />,
   },
   {
+    id: 3,
     title: "Support your environment",
     text: dummyText,
     icon: <GlobalOutlined />,
@@ -36,8 +39,8 @@ const HeroHeader = () => {
       style={{ backgroundImage: "url('images/hero-header.jpg')" }}
     >
       <Row gutter={16}>
-        {content.map(({ icon, title, text }) => (
-          <Col span={8}>
+        {content.map(({ id, icon, title, text }) => (
+          <Col span={8} key={id}>
             <Card
               title={
                 <>
