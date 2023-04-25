@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
 import Home from "./pages/home/Home";
@@ -7,6 +7,7 @@ import Signup from "./pages/signup/Signup";
 import Doctor from "./pages/doctor/Doctor";
 import Read from "./pages/read/Read";
 import Update from "./pages/update/Update";
+import { Button, Result } from "antd";
 
 const routes = [
   {
@@ -32,6 +33,21 @@ const routes = [
   {
     path: "/update",
     element: <Update />,
+  },
+  {
+    path: "/buy-a-card",
+    element: (
+      <Result
+        status="404"
+        title="Coming Soon..."
+        subTitle="Sorry, the page you visited does not exist."
+        extra={
+          <Link to={"/"}>
+            <Button type="primary">Back Home</Button>
+          </Link>
+        }
+      />
+    ),
   },
 ];
 

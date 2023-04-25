@@ -51,7 +51,11 @@ const NavBar = () => {
   )?.key;
 
   const onChange = ({ key }) => {
-    navigate(items[key].link);
+    if (key === "signout") {
+      navigate("/");
+    } else {
+      navigate(items[key].link);
+    }
   };
 
   return (

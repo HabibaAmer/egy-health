@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 
 import "./SignupForm.css";
 
-const SignupForm = () => {
+const SignupForm = ({ onSignup }) => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    onSignup();
   };
 
   return (
