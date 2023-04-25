@@ -4,6 +4,8 @@ import NavBar from "./components/navBar/NavBar";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
+import Doctor from "./pages/doctor/Doctor";
+import Read from "./pages/read/Read";
 
 const routes = [
   {
@@ -17,6 +19,14 @@ const routes = [
   {
     path: "/signup",
     element: <Signup />,
+  },
+  {
+    path: "/doctor",
+    element: <Doctor />,
+  },
+  {
+    path: "/read",
+    element: <Read />,
   },
 ];
 

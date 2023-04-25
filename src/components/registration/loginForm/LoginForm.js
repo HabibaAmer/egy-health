@@ -5,13 +5,18 @@ import {
 } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./LoginForm.css";
 
 const LoginPatient = ({ doctor }) => {
+  const navigate = useNavigate();
+
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    if (doctor) {
+      navigate("/doctor", { state: { username: values.username } });
+    }
   };
 
   return (
@@ -45,19 +50,7 @@ const LoginPatient = ({ doctor }) => {
       >
         <Input.Password placeholder="Password" prefix={<LockOutlined />} />
       </Form.Item>
-      {doctor && (
-        <Form.Item
-          name="otp"
-          rules={[
-            {
-              required: true,
-              message: "Please input your OTP!",
-            },
-          ]}
-        >
-          <Input prefix={<SecurityScanOutlined />} placeholder="OTP" />
-        </Form.Item>
-      )}
+
       <Form.Item>
         <Form.Item name="remember" valuePropName="checked" noStyle>
           <Checkbox>Remember me</Checkbox>

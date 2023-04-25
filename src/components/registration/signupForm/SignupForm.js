@@ -1,5 +1,5 @@
 import { LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Form, Input, Radio, Switch } from "antd";
+import { Button, Form, Input, Radio } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 
