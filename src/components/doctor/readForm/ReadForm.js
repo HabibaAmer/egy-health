@@ -6,7 +6,15 @@ import { Button, Form, Input } from "antd";
 const ReadForm = ({ onRequest }) => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
-    onRequest(values);
+    // request data from BE
+    onRequest({
+      key: "1",
+      name: "Mike",
+      age: 32,
+      gender: "Male",
+      bloodType: "O+",
+      allergies: "test",
+    });
   };
 
   return (

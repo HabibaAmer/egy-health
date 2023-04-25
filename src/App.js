@@ -6,6 +6,7 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Doctor from "./pages/doctor/Doctor";
 import Read from "./pages/read/Read";
+import Update from "./pages/update/Update";
 
 const routes = [
   {
@@ -27,6 +28,10 @@ const routes = [
   {
     path: "/read",
     element: <Read />,
+  },
+  {
+    path: "/update",
+    element: <Update />,
   },
 ];
 

@@ -12,7 +12,7 @@ const Doctor = ({ username }) => {
         <Link to="/read" state={{ ...location.state }}>
           Read Patient Data
         </Link>
-        <Link to="/doctor" state={{ ...location.state }}>
+        <Link to="/update" state={{ ...location.state }}>
           Update Patient Data
         </Link>
       </div>
