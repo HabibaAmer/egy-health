@@ -4,6 +4,10 @@
   flex-direction: column;
   justify-content: center;
   flex: 1;
+
+  h1 {
+    text-align: center;
+  }
 }
 
 .patient .buttons {

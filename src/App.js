@@ -9,6 +9,7 @@ import Read from "./pages/read/Read";
 import Update from "./pages/update/Update";
 import { Button, Result } from "antd";
 import Patient from "./pages/patient/Patient";
+import CreatePatient from "./pages/createPatient/CreatePatient";
 
 const routes = [
   {
@@ -53,6 +54,10 @@ const routes = [
   {
     path: "/patient",
     element: <Patient />,
+  },
+  {
+    path: "/complete-data",
+    element: <CreatePatient />,
   },
 ];
 

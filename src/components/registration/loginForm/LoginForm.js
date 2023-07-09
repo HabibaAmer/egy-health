@@ -24,7 +24,11 @@ const LoginPatient = ({ doctor }) => {
         if (doctor) {
           navigate("/doctor", { state: response.data.data });
         } else {
+          if(response.data.data.IsCreationComplete) {
           navigate("/patient", { state: response.data.data });
+          } else {
+            navigate("/complete-data", { state: response.data.data });
+          }
         }
 
       })

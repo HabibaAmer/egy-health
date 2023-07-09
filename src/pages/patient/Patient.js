@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 const Patient = () => {
   const location = useLocation();
   return (
-    <div className="Patient">
+    <div className="patient">
       <h1>Welcome Patient {location.state.Username}</h1>
       <div className="buttons">
         {/* <Link to="/read" state={{ ...location.state }}>
