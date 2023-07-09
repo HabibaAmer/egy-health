@@ -1,0 +1,12 @@
+.patient {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.patient .buttons {
+  display: flex;
+  gap: 30px;
+}

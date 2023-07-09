@@ -8,7 +8,7 @@ import "./SignupForm.css";
 const SignupForm = ({ onSignup }) => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
-    onSignup();
+    onSignup(values);
   };
 
   return (
@@ -21,15 +21,15 @@ const SignupForm = ({ onSignup }) => {
       onFinish={onFinish}
     >
       <Form.Item
-        name="username"
+        name="name"
         rules={[
           {
             required: true,
-            message: "Please input your Username!",
+            message: "Please input your Name!",
           },
         ]}
       >
-        <Input prefix={<UserOutlined />} placeholder="Username" />
+        <Input prefix={<UserOutlined />} placeholder="Name" />
       </Form.Item>
       <Form.Item
         name="email"

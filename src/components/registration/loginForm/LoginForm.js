@@ -4,19 +4,34 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import "./LoginForm.css";
+import axiosInstance from "../../../axios";
 
 const LoginPatient = ({ doctor }) => {
   const navigate = useNavigate();
+  const [error, setError] = useState(false);
 
   const onFinish = (values) => {
+    setError(false);
     console.log("Received values of form: ", values);
-    if (doctor) {
-      navigate("/doctor", { state: { username: values.username } });
-    }
+    axiosInstance.post(`/user/signin/${doctor ? 'doctor' : 'patient'}`, values)
+      .then(function (response) {
+        console.log(response);
+
+        if (doctor) {
+          navigate("/doctor", { state: response.data.data });
+        } else {
+          navigate("/patient", { state: response.data.data });
+        }
+
+      })
+      .catch(function (error) {
+        console.log(error);
+        setError(true);
+      });
   };
 
   return (
@@ -28,16 +43,17 @@ const LoginPatient = ({ doctor }) => {
       }}
       onFinish={onFinish}
     >
+      {error ? <p>Failed to login, check UserID and Password</p> : <></>}
       <Form.Item
-        name="username"
+        name="id"
         rules={[
           {
             required: true,
-            message: "Please input your Username!",
+            message: "Please input your UserID!",
           },
         ]}
       >
-        <Input prefix={<UserOutlined />} placeholder="Username" />
+        <Input prefix={<UserOutlined />} placeholder="UserID" />
       </Form.Item>
       <Form.Item
         name="password"

@@ -10,7 +10,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="form">
-        <Collapse accordion defaultActiveKey={"2"} size="large">
+        <Collapse accordion defaultActiveKey={"1"} size="large">
           <Panel header="Login as a patient" key="1">
             <LoginForm />
           </Panel>

@@ -8,6 +8,7 @@ import Doctor from "./pages/doctor/Doctor";
 import Read from "./pages/read/Read";
 import Update from "./pages/update/Update";
 import { Button, Result } from "antd";
+import Patient from "./pages/patient/Patient";
 
 const routes = [
   {
@@ -48,6 +49,10 @@ const routes = [
         }
       />
     ),
+  },
+  {
+    path: "/patient",
+    element: <Patient />,
   },
 ];
 
